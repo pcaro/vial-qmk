@@ -23,7 +23,8 @@ enum layers{
     MAC_BASE,
     MAC_FN,
     WIN_BASE,
-    WIN_FN
+    WIN_FN,
+    WIN_FN2
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -58,6 +59,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   _______,  _______,  _______,  _______,  _______,  _______,             _______,            _______,
         _______,    _______,            _______,  _______,  _______,  _______,   _______,  _______,  NK_TOGG,  _______,  _______,  _______,   _______,  _______,  _______,
         _______,    _______,  _______,            _______,  _______,  _______,                       _______,            _______,                       _______,  _______,  _______),
+    [WIN_FN2] = LAYOUT_ansi_89(
+        RGB_TOG,    _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,   KC_VOLU,  _______,            _______,
+        _______,    _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,            _______,
+        _______,    RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,   _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,            _______,
+        _______,    _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,   _______,  _______,  _______,  _______,  _______,  _______,             _______,            _______,
+        _______,    _______,            _______,  _______,  _______,  _______,   _______,  _______,  NK_TOGG,  _______,  _______,  _______,   _______,  _______,  _______,
+        _______,    _______,  _______,            _______,  _______,  _______,                       _______,            _______,                       _______,  _______,  _______),
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
@@ -65,7 +73,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [MAC_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [MAC_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [WIN_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
+    [WIN_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
+    [WIN_FN2]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
 };
 #endif // ENCODER_MAP_ENABLE
 
